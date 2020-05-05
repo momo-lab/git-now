@@ -5,7 +5,7 @@ if [ "$DEBUG" = "yes" ]; then
   set -x
 fi
 
-GITNOW_DIR=$0
+GITNOW_DIR=$(readlink -f $0)
 GITNOW_DIR=${GITNOW_DIR%\\*} # for msysGit
 GITNOW_DIR=${GITNOW_DIR%/*}  # for others
 export GITNOW_DIR
